@@ -63,7 +63,6 @@ import (
 	"k8s.io/component-base/version"
 	"k8s.io/component-base/version/verflag"
 	"k8s.io/klog"
-	"k8s.io/glog"
 	aggregatorapiserver "k8s.io/kube-aggregator/pkg/apiserver"
 	aggregatorscheme "k8s.io/kube-aggregator/pkg/apiserver/scheme"
 	"k8s.io/kubernetes/cmd/kube-apiserver/app/options"
@@ -149,10 +148,7 @@ cluster's shared state through which all other components interact.`,
 func Run(completeOptions completedServerRunOptions, stopCh <-chan struct{}) error {
 	// To help debugging, immediately log version
 	klog.Infof("Version: %+v", version.Get())
-	glog.Infof("=============================HELLO FROM API SERVER=======================\n")
-	glog.Infof("=============================HELLO FROM API SERVER=======================\n")
-	glog.Infof("=============================HELLO FROM API SERVER=======================\n")
-	glog.Infof("=============================HELLO FROM API SERVER=======================\n")
+	fmt.printf("=============================HELLO FROM API SERVER=======================\n");
 
 	server, err := CreateServerChain(completeOptions, stopCh)
 	if err != nil {
