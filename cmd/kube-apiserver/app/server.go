@@ -148,7 +148,7 @@ cluster's shared state through which all other components interact.`,
 func Run(completeOptions completedServerRunOptions, stopCh <-chan struct{}) error {
 	// To help debugging, immediately log version
 	klog.Infof("Version: %+v", version.Get())
-	fmt.Println("=============================HELLO  FROM API SERVER=======================");
+	fmt.Println("=============================HELLO FROM API SERVER=======================");
 
 	server, err := CreateServerChain(completeOptions, stopCh)
 	if err != nil {
